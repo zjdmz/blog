@@ -1,0 +1,80 @@
+{% extends "cms/cms-base.html" %}
+
+{% block title %}
+    博客编辑
+{% endblock %}
+
+{% block script_css %}
+    <link rel="stylesheet" href="{% static 'tinymce/skins/lightgray/skin.min.css' %}">
+    <link rel="stylesheet" href="{% static "css/blog/edit_article.css" %}">
+
+{% endblock %}
+
+{% block main-content %}
+    <section class="content-header">
+        <h1>
+            后台管理
+            <small>控制台</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i>文章管理&ensp;>>&ensp;文章编辑</a></li>
+        </ol>
+    </section>
+    <section class="content form-section ">
+        {% if article %}
+            <form class="col-xs-12" method="post" id="edit_article_form" method="post"
+                  action="/edit_article/{{ article.id }}">
+
+        {% else %}
+            <form class="col-xs-12" method="post" id="edit_article_form" method="post" action="/write_article">
+
+        {% endif %}
+        {% csrf_token %}
+        <div class="form-group ">
+            <label for="title" class="">文章标题：</label>
+            <input class="form-control" id="title" value="{{ article.title }}" name="title">
+            <input class="hidden" id="article_id" value="{{ article.id }}" name="article_id">
+        </div>
+        <div class="form-group">
+            <label class="" style="display: block;">文章分类：</label>
+            <select name="category" id="article_tag" class="form-control " style="display: inline-block;width: 90%;">
+                {% for category in categorys %}
+                    {% if category.category == article.category.category %}
+                        <option value="{{ category.id }}" selected="selected">{{ category.category }}</option>
+                    {% else %}
+                        <option value="{{ category.id }}">{{ category.category }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <button type="button" class="btn btn-info add_category" style="width: 9%">新建分类</button>
+        </div>
+        <div class="form-group thumbnail-div">
+            <label for="thumbnail" class="" style="display: block">缩略图：</label>
+            <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" class="hidden form-control "
+                   id="thumbnail" value="" name="thumbnail">
+            <input type="text" class="form-group" id="thumb_url" value="{{ article.thumbnail }}" name="thumb_url"
+                   style="display: inline-block">
+            <button type="button" class="btn btn-info" id="upload_image"> 上传图片</button>
+        </div>
+        <div class="form-group">
+            <label for="text-content">文章内容：</label>
+            <textarea class="form-control" rows="50" name="content" id="content"
+                      placeholder="编写您的文章">{{ article.content }}</textarea>
+
+        </div>
+        <input type="submit" class="btn btn-primary pull-right" id="submit_btn" value="发布博文">
+        <div style="clear: both"></div>
+
+        </form>
+        <div style="clear: both"></div>
+
+    </section>
+
+{% endblock %}
+
+{% block scirpt_js %}
+    <script src="{% static "tinymce/tinymce.min.js" %}"></script>
+    <script src="{% static "tinymce/plugins/plugin.min.js" %}"></script>
+    <script src="{% static "js/blog/write_article.js" %}"></script>
+{% endblock %}
+

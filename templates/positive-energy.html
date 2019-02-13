@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}  正能量  {% endblock %}
+
+{% block artickle %}
+
+    <h1 class="t_nav">
+        <span>比你差的和比你好的人都比你努力，你还在等什么！ </span>
+        <a href="{% url "blog:energy" %}" class="n1"> 正能量 </a>
+    </h1>
+
+    <div class="picbox">
+        <ul>
+            <li><a href="/"><i><img src="{% static "images/b01.jpg" %}"></i>
+                <div class="picinfo">
+                    <h3>个人博客模板《早安》</h3>
+                    <span>好咖啡要和朋友一起品尝，好“模板”也要和同样喜欢它的人一起分享。</span></div>
+            </a></li>
+            <li><a href="/"><i><img src="{% static "images/t03.jpg" %}"></i>
+                <div class="picinfo">
+                    <h3>个人博客模板《早安》</h3>
+                    <span>好咖啡要和朋友一起品尝，好“模板”也要和同样喜欢它的人一起分享。</span></div>
+            </a></li>
+        </ul>
+        <ul>
+            <li><a href="/"><i><img src="{% static "images/zd01.jpg" %}"></i>
+                <div class="picinfo">
+                    <h3>个人博客模板《早安》</h3>
+                    <span>好咖啡要和朋友一起品尝，好“模板”也要和同样喜欢它的人一起分享。</span></div>
+            </a></li>
+            <li><a href="/"><i><img src="{% static "images/b03.jpg" %}"></i>
+                <div class="picinfo">
+                    <h3>个人博客模板《早安》</h3>
+                    <span>好咖啡要和朋友一起品尝，好“模板”也要和同样喜欢它的人一起分享。</span></div>
+            </a></li>
+        </ul>
+        <ul>
+            <li><a href="/"><i><img src="{% static "images/b02.jpg" %}"></i>
+                <div class="picinfo">
+                    <h3>个人博客模板《早安》</h3>
+                    <span>好咖啡要和朋友一起品尝，好“模板”也要和同样喜欢它的人一起分享。</span></div>
+            </a></li>
+            <li><a href="/"><i><img src="{% static "images/text02.jpg" %}"></i>
+                <div class="picinfo">
+                    <h3>个人博客模板《早安》</h3>
+                    <span>好咖啡要和朋友一起品尝，好“模板”也要和同样喜欢它的人一起分享。</span></div>
+            </a></li>
+
+
+        </ul>
+        <div class="blank"></div>
+        <div class="pagelist"><a title="Total record">&nbsp;<b>45</b> </a>&nbsp;&nbsp;&nbsp;<b>1</b>&nbsp;<a
+                href="/download/index_2.html">2</a>&nbsp;<a href="/download/index_2.html">下一页</a>&nbsp;<a
+                href="/download/index_2.html">尾页</a></div>
+    </div>
+    {% include "side-bar-2.html" %}
+
+{% endblock %}
+

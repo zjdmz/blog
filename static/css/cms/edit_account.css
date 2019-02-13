@@ -1,0 +1,43 @@
+
+.edit_form {
+    background: white;
+    margin: 10px auto;
+    padding: 15px 10px;
+    border-radius: 20px;
+}
+.form-btn{
+    margin-bottom: 10px;}
+.form-height {
+    margin-bottom: 10px;
+    line-height: 27px;
+    height: 27px;
+}
+
+.edit_form div * {
+    display: inline-block;
+    font-size: 14px;
+    height: 90%;
+}
+
+.edit_form div p {
+    float: right;
+}
+
+.edit_form div label {
+    text-align: right;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.edit_form div input {
+    background: white;
+    border: 0;
+}
+
+#submit_btn {
+    margin-right: 15px;
+}
+
+#edit_btn {
+    margin-left: 20px;
+}

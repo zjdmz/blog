@@ -1,0 +1,142 @@
+
+#long-more{
+    margin-top:10px;!important;
+    margin-bottom:25px;!important;
+
+}
+#form-div h2{
+    margin-bottom: 0;!important;
+
+}
+
+#foot{
+    margin-top: 124px;!important;
+}
+#re-foot{
+    margin-top:30px;
+
+}
+
+form {
+    padding-top: 10px;
+}
+
+#img-captcha input{
+    width: 195px;
+    display: inline-block;
+}
+
+#img-captcha image{
+    display: inline-block;
+}
+
+.form-control{
+    padding: 0 12px;
+}
+.fh5co-form{
+    padding-top: 1px;
+}
+
+
+
+
+#log-title {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#log-title span {
+    padding: 0 8px;
+    font-size: 20px;
+}
+
+#log-title p {
+    display: inline-block;
+    font-size: 20px;
+}
+
+#log-title span:hover {
+    color: darkred;
+    cursor: pointer;
+}
+
+.click-hidden {
+    display: none;
+}
+.back_ground{
+    font-weight: bolder;
+    color: sandybrown;
+}
+#form-form{
+    margin-bottom: 0;!important;
+    padding-bottom: 10px ;!important;
+}
+#message_error{
+    /*float: top;*/
+    color: #d43f3a;
+    margin: 0 auto;
+    text-align: center;
+    float: left;
+    width: 370px;
+    font-size: 18px;
+}
+#message_error div{
+    width: 100%;
+    text-align: center;
+}
+
+#login-button {
+    text-align: right;
+}
+
+
+#sms_login{
+    margin-top: 10px;
+    height: 40px;
+    background: #d0e9c6;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    line-height: normal;
+}
+#sms_login *{line-height: 40px;}
+#sms_login p{
+    display: inline-block;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+#sms_login span:hover{
+    cursor: pointer;
+    color: #0073b7;
+}
+
+#sms_captcha{
+    width: 64%;
+    display: inline-block;
+}
+#sms_captcha2{
+    width: 64%;
+    display: inline-block;!important;
+}
+.sms_captcha_span{
+    width: 32%;
+    height: 100%;
+    margin-left: 4px;
+    padding:  10px;
+    color: #0073b7;
+    border: 1px solid yellowgreen;
+    display: inline-block;
+    text-align: center;
+}
+.sms_captcha_span:hover{
+    cursor: pointer;
+}
+
+.disabled{
+     cursor:not-allowed;
+     /*font-size: large;*/
+}

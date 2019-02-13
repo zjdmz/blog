@@ -1,0 +1,65 @@
+{% extends "cms/cms-base.html" %}
+
+{% block title %}
+    博客编辑
+{% endblock %}
+
+{% block script_css %}
+    <link rel="stylesheet" href="{% static "css/blog/edit_article.css" %}">
+    <link rel="stylesheet" href="{% static 'tinymce/skins/lightgray/skin.min.css' %}">
+{% endblock %}
+
+{% block main-content %}
+    <section class="content-header">
+        <h1>
+            后台管理
+            <small>控制台</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 文章编辑</a></li>
+        </ol>
+    </section>
+    <section class="content form-section ">
+        <form class="col-xs-12" method="post" id="edit_article_form">
+            {% csrf_token %}
+            <div class="form-group ">
+                <label for="username" class="">文章标题：</label>
+                <input class="form-control" id="username" value="" name="username">
+            </div>
+            <div class="form-group">
+                <label>文章分类：</label>
+                <select name="article_tag" id="article_tag" class="form-control">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div class="form-group thumbnail-div">
+                <label for="thumbnail" class="" style="display: block">缩略图：</label>
+                <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png" class="hidden form-control " id="thumbnail" value="" name="email_captcha">
+                <input type="text" class="form-group" id="thumb_url" value="" name="thumb_url"
+                       style="display: inline-block">
+                <button type="button" class="btn btn-info" id="upload_image"> 上传图片</button>
+            </div>
+            <div class="form-group">
+                <label for="text-content">文章内容：</label>
+                <textarea class="form-control" rows="50" name="text-content" id="text-content"
+                          placeholder="编写您的文章"></textarea>
+
+            </div>
+            <input type="submit" class="btn btn-primary pull-right" id="submit_btn" value="发布博文">
+            <div style="clear: both"></div>
+        </form>
+        <div style="clear: both"></div>
+
+    </section>
+
+{% endblock %}
+
+{% block scirpt_js %}
+    <script src="{% static "tinymce/tinymce.min.js" %}"></script>
+    <script src="{% static "tinymce/plugins/plugin.min.js" %}"></script>
+    <script src="{% static "js/blog/edit_article.js" %}"></script>
+{% endblock %}
+

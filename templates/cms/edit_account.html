@@ -1,0 +1,87 @@
+{% extends "cms/cms-base.html" %}
+
+{% block title %}
+    个人中心
+{% endblock %}
+
+{% block script_css %}
+    <link rel="stylesheet" href="{% static "css/cms/edit_account.css" %}">
+{% endblock %}
+
+{% block main-content %}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <h1>
+            后台管理
+            <small>控制台</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 个人中心</a></li>
+        </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content ">
+        <form class="edit_form" method="post">
+            {% csrf_token %}
+            <p class="form-btn">
+                <input type="button" class="btn btn-info " id="edit_btn" value="编辑">
+                <span class="btn btn-primary undo_btn">取消</span>
+            </p>
+
+            <div class="form-height">
+                <label for="username" class="">用户名：</label>
+                <input undo="" class="username" id="username" value="{{ user.username }}" disabled="" name="username">
+            </div>
+            <div class="form-height">
+                <label for="telephone" class="">手机号码：</label>
+                <input class="" id="telephone" value="{{ user.telephone }}" disabled="" name="telephone">
+                <input class="hidden captcha" id="sms_captcha" value="" name="sms_captcha" placeholder="请输入短信验证码"
+                       hidden="hidden" autocomplete="off">
+                <span class="sms_captcha_span btn btn-primary hidden captcha"
+                      style="line-height: 24.3px;padding: 0 8px; width: 90px;">发送验证码</span>
+            </div>
+            <input class="user_id" type="number" value="{{ user.id }}" name="user_id" style="display: none;">
+
+            <div class="form-height">
+                <label for="email" class="">邮&emsp;箱：</label>
+                <input class=" " id="email" value="{{ user.email }}" disabled="" name="email">
+                <input class="hidden captcha" id="email_captcha" value="" name="email_captcha" placeholder="请输入邮箱内的验证码"
+                       autocomplete="off">
+                <span class="email_captcha btn btn-primary hidden captcha"
+                      style="line-height: 24.3px;padding: 0 8px;width: 90px;">发送邮件</span>
+
+
+            </div>
+            <div class="form-height">
+                <label for="last_login" class="">最近登录：</label>
+                <spam>{{ user.last_login_time }}</spam>
+            </div>
+            <div class="form-height">
+                <label for="create_time" class="">注册时间：</label>
+                <span>{{ user.create_times }}</span>
+            </div>
+            <div class="form-height">
+                <label for="is_active" class="">账户状态：</label>
+                <span>{% if user.is_active %}正常{% else %}异常{% endif %}</span>
+            </div>
+            <div class="form-height">
+                <label for="is_staff" class="">账户身份：</label>
+                <span>{% if user.is_staffs %}员工{% else %}非员工{% endif %}{% if user.is_superuser %}&emsp;
+                    超级管理员{% endif %}</span>
+            </div>
+            <div class="form-height">
+                <label for="">
+                <a href="{% url "cms:update_password" %}" class=" edit-pwd"> 修改密码&ensp;&ensp;</a>
+                    </label>
+            </div>
+            <input type="button" class="btn btn-primary pull-right" id="submit_btn" value="提交">
+            <div style="clear: both"></div>
+        </form>
+    </section>
+{% endblock %}
+
+{% block scirpt_js %}
+    <script src="{% static "/js/cms/edit_account.js" %}"></script>
+
+{% endblock %}

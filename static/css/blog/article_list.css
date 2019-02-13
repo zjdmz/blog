@@ -1,0 +1,20 @@
+
+
+.new_article{
+    margin-bottom: 15px;
+}
+.new_article a{
+    color: white;
+}
+
+tr td button a{
+    color: white;
+}
+tr td button a:hover{
+    color: white;
+}
+
+.article_list *{text-align: center}
+.article_title{
+    text-align: left;!important;
+}

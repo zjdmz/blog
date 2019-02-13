@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}
+    注册
+{% endblock %}
+
+{% block sytles %}
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{% static "css/animate.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <!-- Modernizr JS -->
+    <script src="{% static "js/modernizr-2.6.2.min.js" %}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+	<script src="{% static "js/respond.min.js" %}"></script>
+	<![endif]-->
+
+{% endblock %}
+
+{% block artickle %}
+
+    <div class="container " id="long-more">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4  " id="form-div">
+                <!-- Start register In Form -->
+                <form action="#" class="fh5co-form animate-box" data-animate-effect="fadeIn" method="post">
+                    <h2>注&nbsp;&nbsp;册</h2>
+{#                    <div class="form-group">#}
+{#                        <div class="alert alert-success" role="alert">注册成功！</div>#}
+{#                    </div>#}
+                    <div class="form-group">
+                        <label for="name" class="sr-only">用户名</label>
+                        <input type="text" class="form-control" id="name" placeholder="用户名" autocomplete="off" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone" class="sr-only">手机号码</label>
+                        <input type="number" class="form-control" id="telephone" placeholder="11位手机号码" autocomplete="off" name="telephone" >
+                    </div>
+                     <div class="form-group">
+                        <label for="email" class="sr-only">手机号码</label>
+                        <input type="email" class="form-control" id="email" placeholder="邮箱" autocomplete="off" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="sr-only">密码</label>
+                        <input type="password" class="form-control" id="password" placeholder="密码"
+                               autocomplete="off" name="password1">
+                    </div>
+                    <div class="form-group">
+                        <label for="re-password" class="sr-only">重复输入密码</label>
+                        <input type="password" class="form-control" id="re-password" placeholder="重复密码"
+                               autocomplete="off" name="password2">
+                    </div>
+                    <div class="form-group" id="img-captcha">
+                        <label for="img-captcha" class="sr-only">图形验证码</label>
+                        <input type="text" class="form-control" id="input-captcha" placeholder="验证码"
+                               autocomplete="off" name="img_captcha">
+                        <img src="{% url "cms:img_captcha" %}" alt="">
+                    </div>
+                    <div class="form-group">
+                        <label for="remember"><input type="checkbox" id="remember" name="remember" value="1"> 记住我</label>
+                        <p class="pull-right">已经注册？直接&nbsp; &nbsp;<a href="{% url "cms:login" %}">登&nbsp; &nbsp;录</a></p>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <div class="form-group   " id="submits">
+                        <input type="submit" value="注&nbsp;册" class="btn btn-primary">
+                    </div>
+                </form>
+                <!-- END register In Form -->
+
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{% static "js/jquery-3.3.1.min.js" %}"></script>
+    <!-- Bootstrap -->
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <!-- Placeholder -->
+    <script src="{% static "js/jquery.placeholder.min.js" %}"></script>
+    <!-- Waypoints -->
+    <script src="{% static "js/jquery.waypoints.min.js" %}"></script>
+    <!-- Main JS -->
+    <script src="{% static "js/main.js" %}"></script>
+
+
+{% endblock %}
+{% block footer %}
+{#    <footer id="re-foot">#}
+{#        <p>Design by <a href="/">云上风清</a> <a href="/">蜀ICP备 XXX 号</a></p>#}
+{#    </footer>#}
+{% endblock %}

@@ -1,0 +1,26 @@
+
+.form-section {
+    display: flex;
+    justify-content: center; /*实现水平居中*/
+    align-items: center; /*实现垂直居中*/
+    margin-top: 15px;
+}
+
+#thumb_url {
+    width: 90%;
+    display: inline-block;
+}
+
+.thumbnail-div input {
+    margin-bottom: 0;
+}
+
+.mce-window {
+    transform: initial !important;
+}
+
+#upload_image {
+    width: 9%;
+}
+
+

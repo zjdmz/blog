@@ -1,0 +1,61 @@
+{% extends "cms/cms-base.html" %}
+
+{% block title %}
+    分类管理
+{% endblock %}
+
+{% block script_css %}
+    <link rel="stylesheet" href="{% static "css/blog/edit_category.css" %}">
+    <link rel="stylesheet" href="{% static 'tinymce/skins/lightgray/skin.min.css' %}">
+{% endblock %}
+
+{% block main-content %}
+    <section class="content-header">
+        <h1>
+            后台管理
+            <small>控制台</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> 分类管理</a></li>
+        </ol>
+    </section>
+    <section class="content form-section ">
+        <button type="submit" class="btn btn-primary " id="add_category"> 添加分类</button>
+        <form class="col-xs-12" method="post" id="edit_article_form">
+            {% csrf_token %}
+            <table class="table table-hover text-center">
+                <tr class="info" >
+                    <th class="col-xs-2 form-group">分类id</th>
+                    <th class="col-xs-4 form-group">分类名称</th>
+                    <th class="col-xs-4 form-group">创建者</th>
+                    <th class="col-xs-4 form-group">编&emsp;辑</th>
+                </tr>
+
+                {% for foo in categorys %}
+                    <tr ctg-id="{{ foo.id }}" ctg-name="{{ foo.category }}">
+                        <td> {{ foo.id }} </td>
+                        <td> {{ foo.category }} </td>
+                        <td> {{ foo.author.username}} </td>
+                        <td>
+                            <button type="button" class="btn-info edit_ctg">编辑</button>
+                            <button type="button" class="btn-warning del_ctg">删除</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+
+            </table>
+
+        </form>
+        <div style="clear: both"></div>
+
+    </section>
+
+{% endblock %}
+
+{% block scirpt_js %}
+
+    <script src="https://cdn.bootcss.com/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="{% static "js/blog/edit_category.js" %}"></script>
+{% endblock %}
+

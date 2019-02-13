@@ -1,0 +1,165 @@
+.calendar *{
+    margin: 0;
+    padding: 0;
+}
+
+
+a, a:hover {
+    color: #888;
+    text-decoration: none;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.calendar {
+    font-family: "Microsoft Yahei";
+    font-size: 12px;
+    color: #888;
+    width: 300px;
+    padding: 20px;
+    margin: 0px auto 0;
+    background-color: #fafafa;
+    border-radius: 6px;
+    /*float: left;*/
+}
+
+.calendar-title {
+    position: relative;
+    height: 20px;
+    line-height: 20px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+.calendar-title a.title {
+    display: inline-block;
+    font-size: 24px;
+    text-indent: 15px;
+}
+
+/* 回到今天  T */
+#backToday {
+    position: absolute;
+    left: 65%;
+    top: 3px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 100%;
+    color: #fff;
+    background-color: deepskyblue;
+    font-size: 16px;
+}
+
+ /* 小于 大于号 切换月份*/
+.calendar-title .arrow {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    width: 35px;
+}
+
+.calendar-title .arrow span {
+    color: #ddd;
+    font-size: 18px;
+    cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.calendar-title .arrow span:hover {
+    color: #8A9B0F;
+}
+
+.calendar-title .arrow-prev {
+    float: left;
+}
+
+.calendar-title .arrow-next {
+    float: right;
+}
+/* 星期 */
+.calendar-week,
+.calendar-date {
+    overflow: hidden;
+}
+
+.calendar-week .item,
+.calendar-date .item {
+    float: left;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+}
+
+
+/*星期*/
+.calendar-week {
+    padding-bottom: 6px;
+    border-bottom: 1px solid deepskyblue;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.calendar-date {
+}
+/* 日期 */
+.calendar-date .item {
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.calendar-date .item:hover,
+.calendar-date .item-curMonth:hover {
+    background-color: #f0f0f0;
+}
+
+.calendar-date .item-curMonth {
+    color: #333;
+}
+
+.calendar-date .item-curDay,
+.calendar-date .item-curDay:hover {
+    color: #fff;
+    background-color: deepskyblue;
+}
+
+/* 今天 */
+.calendar-today {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    width: 110px;
+    height: 36px;
+    padding: 5px 10px;
+    background-color: deepskyblue;
+    border-radius: 5px;
+    display: none;
+}
+
+.calendar-today .triangle {
+    position: absolute;
+    top: 50%;
+    left: -16px;
+    margin-top: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent deepskyblue transparent transparent;
+}
+
+.calendar-today p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 18px;
+}
